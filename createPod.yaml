@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: pods
+metadata:
+  name: my-nginx
+  label:
+    role: someroll
+spec:
+  containers:
+    name: web-pod
+    image: my-nginx
+    Ports:
+      name: someport
+      containerPort: 80
+      Protocol: Tcp
+      
+

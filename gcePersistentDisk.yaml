@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: gce-pd
+spec:
+  containers:
+    name: nginx
+    image: nginx
+    volumeMounts:
+      mountPath: /test-pd
+      name: test-volume
+  volumes:
+    name: test-volume
+    gcePersistentDisk:
+      pdName: my-data-disk
+      fstype: ext4
+
